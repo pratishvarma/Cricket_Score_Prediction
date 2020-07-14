@@ -1,4 +1,7 @@
 # Cricket_Score_Prediction
+ ![](images/download.jpg)
+ ![](images/ipl.jpg)
+ ![](images/t20.jpg)
  
 Predicting the future sounds like magic whether it be detecting in advance the intent of a potential customer to purchase your product or figuring out where the price of a stock is headed. If we can reliably predict the future of something, then we own a massive advantage. Machine learning has only served to amplify this magic and mystery.
 
