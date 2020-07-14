@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Cricket Score Predictor</title>
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'><link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+  <h1 style="color: #fff; text-align: center;margin-bottom: 5%;margin-top: 10%;">Cricket Score Predictor using ML</h1>
+<!-- partial:index.partial.html -->
+<div class="blog-slider">
+  <div class="blog-slider__wrp swiper-wrapper">
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        
+        <img src="../static/ipl.jpg" alt="">
+      </div>
+      <div class="blog-slider__content">
+        <div class="blog-slider__title">IPL</div>
+        <div class="blog-slider__text">The Indian Premier League is a professional Twenty20 cricket league in India contested during March or April and May of every year by eight teams representing eight different cities in India.</div>
+        <a href="{{ url_for('ipl_') }}" class="blog-slider__button">TRY OUT</a>
+      </div>
+    </div>
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        <img src="../static/odi.jpg" alt="">
+      </div>
+      <div class="blog-slider__content">
+        <div class="blog-slider__title">ODI</div>
+        <div class="blog-slider__text">A One Day International is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, usually 50.</div>
+        <a href="{{ url_for('odi_') }}" class="blog-slider__button">TRY OUT</a>
+      </div>
+    </div>
+    
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        <img src="../static/T20.jpg" alt="">
+      </div>
+      <div class="blog-slider__content">
+        <div class="blog-slider__title">T20</div>
+        <div class="blog-slider__text">Twenty20 cricket or Twenty-20, is a shortened format of cricket. At the professional level, it was originally introduced by the England and Wales Cricket Board in 2003 for the inter-county competition.</div>
+        <a href="{{ url_for('tt_') }}" class="blog-slider__button">TRY OUT</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="blog-slider__pagination"></div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script><script  src="../static/script.js"></script>
+
+</body>
+</html>

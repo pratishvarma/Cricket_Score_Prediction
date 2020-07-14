@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+
+    <title>IPL Score Prediction</title>
+
+    <style type="text/css">
+      html,body{
+        height: 100%
+        }
+      body{
+          background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+          background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+         
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          
+          background-size: cover;
+        }
+    </style>
+
+  </head>
+  <body>
+      <div class="container">
+        <div class="text-center">
+          <h1 class="display-4 mt-5" style="font-size: 2rem; color: white;">IPL Score Prediction using ML</h1>
+          <small class="text-muted" style="color: white !important;">Code by Pratish Varma & Mahesh Dhoran</small>
+        </div>
+      </div>
+      <div class="container" style="margin-top:5%">
+
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('ipl')}}"  method="POST" style="margin-bottom: 5%" class="animate__animated animate__fadeIn">
+          
+          <div class="form-group">
+            <label style="color:white">Venue</label>
+            <select name="ven" class="form-control">
+              <option value="Select">Select</option>
+              <option value='Eden Garden'>Eden Garden</option>
+              <option value='M Chinnaswamy Stadium'>M Chinnaswamy Stadium</option>
+              <option value='Feroz Shah Kotla'>Feroz Shah Kotla</option>
+              <option value='Wankhede Stadium'>Wankhede Stadium</option>
+              <option value='MA Chidambaram Stadium, Chepauk'>MA Chidambaram Stadium, Chepauk</option>
+              <option value='Punjab Cricket Association Stadium, Mohali'>Punjab Cricket Association Stadium, Mohali</option>
+              <option value='Sawai Mansingh Stadium'>Sawai Mansingh Stadium</option>
+              <option value='Rajiv Gandhi International Stadium, Uppal'>Rajiv Gandhi International Stadium, Uppal</option>
+              <option value='Sardar Patel Stadium, Motera'>Sardar Patel Stadium, Motera</option>
+              <option value='Kingsmead'>Kingsmead</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Batting Team</label>
+            <select name="bt" class="form-control">
+              <option value="Select">Select</option>
+              <option value="Mumbai Indians">Mumbai Indians</option>
+              <option value="Chennai Super Kings">Chennai Super Kings</option>
+              <option value="Delhi Daredevils">Delhi Daredevils</option>
+              <option value="Kings XI Punjab">Kings XI Punjab</option>
+              <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+              <option value="Rajasthan Royals">Rajasthan Royals</option>
+              <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+              <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Bowling Team</label>
+            <select name="blt" class="form-control">
+              <option value="Select">Select</option>
+              <option value="Chennai Super Kings">Chennai Super Kings</option>
+              <option value="Mumbai Indians">Mumbai Indians</option>
+              <option value="Delhi Daredevils">Delhi Daredevils</option>
+              <option value="Kings XI Punjab">Kings XI Punjab</option>
+              <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+              <option value="Rajasthan Royals">Rajasthan Royals</option>
+              <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+              <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Overs (>5.0)</label>
+            <input type="text" name="over"  class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Runs</label>
+            <input type="text" name="run" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Wickets</label>
+            <input type="text" name="wic" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Runs in previous five overs</label>
+            <input type="text" name="rinp" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Wickets in previous five overs</label>
+            <input type="text" name="winp" class="form-control" required>
+          </div>
+
+          <button type="submit" class="btn btn-success">Predict</button>
+          <button class="btn btn-danger ml-1"><a href="{{ url_for('ipl_') }}" style="text-decoration: none; color:white;">Refresh</a></button>
+        </form>
+
+        <!-- Main Input For Receiving Query to our ML --> 
+
+        {% if connect ==  5 %}
+        <div class="card text-center mt-5 mb-5 animate__animated animate__flipInX animate__slower">
+            <div class="card-header">
+              Results
+            </div>
+            <div class="card-body" style="background-color:white;">
+
+          <!-- Main ML Prediction Display Here -->
+             
+                     <p class="card-text">
+                                <div class="alert alert-primary" role="alert">
+                                    The final predicted score (range): {{final_score_l}} to {{final_score_u}}
+                                </div>
+                     </p>
+               
+            </div>
+
+          <!-- Main ML Prediction Display Ends Here -->
+           </div>
+          {% endif %}
+
+      </div>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
