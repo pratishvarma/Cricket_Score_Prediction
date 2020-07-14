@@ -13,10 +13,12 @@ The main objective of sports prediction is to improve team performance and enhan
 - Spyder
 - Numpy
 - Pandas
+- Scikit-learn
 - HTML
 - CSS
 - JavaScript
-- Scikit-learn
+- Flask
+- Python
 
 **Prerequisites :**
 This post assumes familiarity with basic Machine Learning concepts Regressions like Linear Regression , Logistic Regression , SVM , Decision Tree , Randomn Forest etc.
