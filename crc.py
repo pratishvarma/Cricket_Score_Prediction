@@ -20,7 +20,8 @@ def index():
 
 @app.route('/ipl_')
 def ipl_():
-	return render_template('ipl.html')
+	connect=4
+	return render_template('ipl.html',connect=connect)
 
 @app.route('/ipl', methods=['POST'])
 
@@ -217,7 +218,8 @@ def ipl():
 
 @app.route('/odi_')
 def odi_():
-	return render_template('odi.html')
+	connect=4
+	return render_template('odi.html',connect=connect)
 
 @app.route('/odi', methods=['POST'])
 def odi():
@@ -440,7 +442,8 @@ def odi():
 
 @app.route('/tt_')
 def tt_():
-	return render_template('tt.html')
+	connect=4
+	return render_template('tt.html',connect=connect)
 
 @app.route('/tt', methods=['POST'])
 def tt():
