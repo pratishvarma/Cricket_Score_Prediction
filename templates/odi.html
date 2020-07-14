@@ -42,7 +42,7 @@
       </div>
       <div class="container" style="margin-top:5%">
 
-
+        {% if connect ==  4 %}
         <!-- Main Input For Receiving Query to our ML -->
         <form action="{{ url_for('odi')}}" style="margin-bottom: 5%"  method="POST" class="animate__animated animate__fadeIn">
           
@@ -135,7 +135,7 @@
           <button type="submit" class="btn btn-success">Predict</button>
           <button class="btn btn-danger ml-1"><a href="{{ url_for('odi_') }}" style="text-decoration: none; color:white;">Refresh</a></button>
         </form>
-
+        {% endif %}
         <!-- Main Input For Receiving Query to our ML --> 
 
         {% if connect ==  5 %}
